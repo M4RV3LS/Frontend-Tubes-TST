@@ -26,6 +26,7 @@ interface Studio {
   description: string;
   facilities: string[];
   instruments: string[];
+  studioRooms: StudioRoom[];
 }
 
 interface MenuItem {
@@ -45,10 +46,6 @@ interface AccordionSectionState {
 interface StudioRoom {
   roomName: string;
   price: number;
-}
-
-interface Studio extends Omit<Studio, "studioRooms"> {
-  studioRooms: StudioRoom[];
 }
 
 const Page = () => {
