@@ -391,14 +391,14 @@ const Page = () => {
           <div className="grid grid-rows-2 gap-2">
             <div className="rounded-2xl">
               <img
-                src={studio.imgSrc[0]}
+                src={studio.imgSrc[1]}
                 alt={studio.studioName}
                 className="rounded-2xl"
               />
             </div>
             <div className="rounded-2xl">
               <img
-                src={studio.imgSrc[0]}
+                src={studio.imgSrc[2]}
                 alt={studio.studioName}
                 className="rounded-2xl"
               />
@@ -407,14 +407,14 @@ const Page = () => {
           <div className="grid grid-rows-2">
             <div className="rounded-2xl">
               <img
-                src={studio.imgSrc[0]}
+                src={studio.imgSrc[3]}
                 alt={studio.studioName}
                 className="rounded-2xl"
               />
             </div>
             <div className="rounded-2xl">
               <img
-                src={studio.imgSrc[0]}
+                src={studio.imgSrc[4]}
                 alt={studio.studioName}
                 className="rounded-2xl"
               />

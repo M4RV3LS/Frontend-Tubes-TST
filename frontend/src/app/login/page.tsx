@@ -57,7 +57,7 @@ export default function Login() {
         <div className="flex items-center flex-col justify-center gap-y-2">
           <h1 className="font-bold text-xl">Welcome to Sound Space!</h1>
           <Image
-            src="/assets/soundspace logo.png"
+            src="/assets/soundspace logo.svg"
             alt="SoundSpace Logo"
             width={150}
             height={150}
