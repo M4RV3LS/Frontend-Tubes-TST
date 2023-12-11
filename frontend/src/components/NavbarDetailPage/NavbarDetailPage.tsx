@@ -4,7 +4,9 @@ const NavbarDetailPage = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     // Redirect to the login page
-    window.location.href = "/login";
+    if (typeof window !== "undefined") {
+      window.location.href = "/login";
+    }
   };
   return (
     <div>

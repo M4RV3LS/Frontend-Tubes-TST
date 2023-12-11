@@ -5,7 +5,9 @@ import studioData from "../../data/studioData.json"; // Adjust the path as neede
 
 const StudioCard = () => {
   const navigateToStudioDetail = (id: string) => {
-    window.location.href = `/studio-detail/${id}`;
+    if (typeof window !== "undefined") {
+      window.location.href = `/studio-detail/${id}`;
+    }
   };
   return (
     <div className="grid grid-cols-3 gap-4 px-4">

@@ -39,9 +39,10 @@ export default function Login() {
       console.log("Login successful", response.data);
       // Store the token in localStorage
       localStorage.setItem("token", response.data.access_token);
-
-      // Redirect to the user dashboard page
-      window.location.href = "/user-dashboard";
+      if (typeof window !== "undefined") {
+        // Redirect to the user dashboard page
+        window.location.href = "/user-dashboard";
+      }
     } catch (error) {
       if (error instanceof Error) {
         console.error("Login error:", error.message);

@@ -3,7 +3,9 @@ import React from "react";
 
 const SuccessPage = () => {
   const directToHomePage = () => {
-    window.location.href = "/user-dashboard";
+    if (typeof window !== "undefined") {
+      window.location.href = "/user-dashboard";
+    }
   };
 
   return (

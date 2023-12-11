@@ -57,11 +57,19 @@ const Page = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     // Redirect to the login page
-    window.location.href = "/login";
+    if (typeof window !== 'undefined') {
+      window.location.href = "/login";
+    }
+    
+    
   };
 
   const navigateToUserDashboard = () => {
-    window.location.href = `/user-dashboard`;
+    if (typeof window !== 'undefined') {
+      window.location.href = `/user-dashboard`;
+    }
+    
+    
   };
 
   const [openSections, setOpenSections] = useState<AccordionSectionState>({
