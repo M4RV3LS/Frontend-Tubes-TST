@@ -15,9 +15,9 @@ const Navbar = () => {
   // Helper function to determine if the link is active
   const isActive = (href: string) => {
     // Check if window is defined (so we're running in the browser and not in Node.js)
-
-    return window.location.pathname === href;
-
+    if (typeof window !== "undefined") {
+      return window.location.pathname === href;
+    }
     return false; // Default to false if not running in a browser
   };
 
