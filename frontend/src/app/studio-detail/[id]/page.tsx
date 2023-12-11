@@ -13,6 +13,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { IoMdClose } from "react-icons/io";
 import axios from "axios";
 import MenuCard from "@/components/MenuCard/MenuCard";
+import Image from "next/image";
 
 interface Studio {
   id: string;
@@ -391,41 +392,51 @@ const Page = () => {
         </div>
         <div className="grid grid-cols-3 gap-4">
           <div className="rounded-2xl">
-            <img
+            <Image
               src={studio.imgSrc[0]}
               alt={studio.studioName}
               className="rounded-2xl object-cover h-full w-256"
+              width={256}
+              height={256}
             />
           </div>
           <div className="grid grid-rows-2 gap-2">
             <div className="rounded-2xl">
-              <img
+              <Image
                 src={studio.imgSrc[1]}
                 alt={studio.studioName}
                 className="rounded-2xl"
+                width={256}
+                height={256}
               />
             </div>
             <div className="rounded-2xl">
-              <img
+              <Image
                 src={studio.imgSrc[2]}
                 alt={studio.studioName}
                 className="rounded-2xl"
+                width={256}
+                height={256}
               />
             </div>
           </div>
           <div className="grid grid-rows-2">
             <div className="rounded-2xl">
-              <img
+              <Image
                 src={studio.imgSrc[3]}
                 alt={studio.studioName}
                 className="rounded-2xl"
+                width={256}
+                height={256}
               />
             </div>
             <div className="rounded-2xl">
-              <img
+              <Image
                 src={studio.imgSrc[4]}
                 alt={studio.studioName}
                 className="rounded-2xl"
+                width={256}
+                height={256}
               />
             </div>
           </div>
@@ -796,7 +807,7 @@ const Page = () => {
                               className="mr-2"
                             />
                             <div className="relative h-32 w-64">
-                              <img
+                              <Image
                                 src="../../assets/menu.jpg"
                                 layout="fill"
                                 objectFit="cover"
