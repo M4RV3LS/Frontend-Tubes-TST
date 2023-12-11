@@ -51,7 +51,7 @@ interface StudioRoom {
 const Page = () => {
   const [studio, setStudio] = useState<Studio | undefined>(undefined);
   // Menu Items
-  const [menuItems, setMenuItems] = useState([]);
+  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -118,12 +118,12 @@ const Page = () => {
   );
   const [calculateError, setCalculateError] = useState("");
 
-  const handleDateChange = (date) => setStartDate(date);
+  const handleDateChange = (date: Date) => setStartDate(date);
 
-  const handleGenreChange = (event: React.ChangeEvent<HTMLSelectElement>) =>
+  const handleGenreChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setGenre(event.target.value);
 
-  const handleThemeChange = (event: React.ChangeEvent<HTMLSelectElement>) =>
+  const handleThemeChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setTheme(event.target.value);
 
   const handleMaxParticipantsChange = (
@@ -179,11 +179,13 @@ const Page = () => {
       return;
     }
 
-    if (participantsNumber > studio?.maximumParticipant) {
-      setCalculateError(
-        `Number of participants exceeds the maximum allowed of ${studio?.maximumParticipant}.`
-      );
-      return;
+    if (studio && studio.maximumParticipant) {
+      if (participantsNumber > studio?.maximumParticipant) {
+        setCalculateError(
+          `Number of participants exceeds the maximum allowed of ${studio?.maximumParticipant}.`
+        );
+        return;
+      }
     }
 
     // Find the price of the selected menu item
@@ -267,9 +269,13 @@ const Page = () => {
 
   //handle submit here
   const handleSubmit = async () => {
+    if (!studio) {
+      console.log("Please select a studio.");
+      return;
+    }
     const formattedDate = startDate.toISOString().split("T")[0];
     const maxParticipantsInt = parseInt(maxParticipants, 10);
-    const totalFeeInt = parseInt(totalFee, 10); // Make sure totalFee is an integer
+    const totalFeeInt = totalFee; // Make sure totalFee is an integer
 
     const sessionData = {
       studio_name: studio.studioName,
