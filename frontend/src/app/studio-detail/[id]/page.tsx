@@ -120,15 +120,21 @@ const Page = () => {
 
   const handleDateChange = (date: Date) => setStartDate(date);
 
-  const handleGenreChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setGenre(event.target.value);
-
-  const handleThemeChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setTheme(event.target.value);
-
-  const handleMaxParticipantsChange = (
-    e: React.ChangeEvent<HTMLSelectElement>
+  const handleGenreChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
   ) => {
+    setGenre(event.target.value);
+  };
+
+  const handleThemeChange: React.ChangeEventHandler<HTMLInputElement> = (
+    event
+  ) => {
+    setTheme(event.target.value);
+  };
+
+  const handleMaxParticipantsChange: React.ChangeEventHandler<
+    HTMLInputElement
+  > = (event) => {
     const input = e.target.value;
     setMaxParticipants(input);
 
@@ -731,7 +737,7 @@ const Page = () => {
                     <p>Total Fee: IDR {totalFee.toLocaleString()}</p>
                     <p>
                       Fee per Participant: IDR{" "}
-                      {feePerParticipant.toLocaleString()}
+                      {feePerParticipant?.toLocaleString() || "Calculating..."}
                     </p>
                   </div>
                 )}
