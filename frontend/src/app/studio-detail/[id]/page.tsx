@@ -524,7 +524,6 @@ const Page = () => {
               </h2>
               <div
                 id="accordion-arrow-icon-body-2"
-                className="hidden"
                 aria-labelledby="accordion-arrow-icon-heading-2"
                 className={
                   openSections["accordion-arrow-icon-body-2"] ? "" : "hidden"
@@ -573,7 +572,6 @@ const Page = () => {
               </h2>
               <div
                 id="accordion-arrow-icon-body-3"
-                className="hidden"
                 aria-labelledby="accordion-arrow-icon-heading-3"
                 className={
                   openSections["accordion-arrow-icon-body-3"] ? "" : "hidden"
