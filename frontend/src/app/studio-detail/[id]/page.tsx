@@ -8,6 +8,7 @@ import { Accordion } from "flowbite";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaRegClock, FaStar } from "react-icons/fa";
 import { HiUserGroup } from "react-icons/hi";
+import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { IoMdClose } from "react-icons/io";
@@ -327,18 +328,18 @@ const Page = () => {
           customer_id: 3, // This should be the ID of the current user, not hardcoded
           menu_id: savedMenuId,
           menu_quantity: savedQuantity,
-        }, {
+        },
+        {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
             accept: "application/json",
           },
         }
-        
       );
       if (orderResponse.status === 200) {
         console.log("Order placed:", orderResponse.data);
-        window.location.href ="../../success";
+        window.location.href = "../../success";
       }
     } catch (error) {
       if (axios.isAxiosError(error)) {
