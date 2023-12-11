@@ -135,7 +135,7 @@ const Page = () => {
   const handleMaxParticipantsChange: React.ChangeEventHandler<
     HTMLInputElement
   > = (event) => {
-    const input = e.target.value;
+    const input = event.target.value;
     setMaxParticipants(input);
 
     if (!input) {
