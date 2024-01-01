@@ -22,7 +22,7 @@ export default function Login() {
 
     try {
       const response = await axios.post(
-        "http://soundspace.aedmg0hfejf2bhhf.southeastasia.azurecontainer.io/token",
+        "https://soundspace.aedmg0hfejf2bhhf.southeastasia.azurecontainer.io/token",
         new URLSearchParams({
           username: username,
           password: password,
