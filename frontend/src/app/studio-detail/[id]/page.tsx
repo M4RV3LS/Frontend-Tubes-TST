@@ -57,19 +57,15 @@ const Page = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     // Redirect to the login page
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.location.href = "/login";
     }
-    
-    
   };
 
   const navigateToUserDashboard = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.location.href = `/user-dashboard`;
     }
-    
-    
   };
 
   const [openSections, setOpenSections] = useState<AccordionSectionState>({
@@ -98,7 +94,7 @@ const Page = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/delight-cook/menu-items"
+          "http://soundspace.aedmg0hfejf2bhhf.southeastasia.azurecontainer.io/delight-cook/menu-items"
         );
         setMenuItems(response.data); // Make sure this is an array
       } catch (error) {
@@ -324,7 +320,7 @@ const Page = () => {
 
       // Make a POST request to create the session
       const sessionResponse = await axios.post(
-        "http://localhost:8000/sessions",
+        "http://soundspace.aedmg0hfejf2bhhf.southeastasia.azurecontainer.io/sessions",
         sessionData,
         {
           headers: {
@@ -339,7 +335,7 @@ const Page = () => {
       // If the session is created successfully, make a POST request to place the order
       // You would need to add the session ID to the orderData if required
       const orderResponse = await axios.post(
-        "http://localhost:8000/place-order",
+        "http://soundspace.aedmg0hfejf2bhhf.southeastasia.azurecontainer.io/place-order",
         {
           order_id: 0, // Assuming order_id should be set by the server, not the client
           customer_id: 3, // This should be the ID of the current user, not hardcoded
