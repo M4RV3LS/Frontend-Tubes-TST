@@ -25,7 +25,7 @@ export default function Signup() {
 
     try {
       const response = await axios.post(
-        "http://soundspace.aedmg0hfejf2bhhf.southeastasia.azurecontainer.io/register",
+        "https://soundspace.aedmg0hfejf2bhhf.southeastasia.azurecontainer.io/register",
         formData,
         {
           headers: {
